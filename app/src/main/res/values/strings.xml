@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">ClockInOut</string>
+
+    <string name="button_login">LOG IN</string>
+    <string name="button_create_account">Create Account</string>
+    <string name="button_clock_in">CLOCK IN</string>
+    <string name="button_clock_out">CLOCK OUT</string>
+
+    <string name="text_title_main">MAIN</string>
+
+    <string name="text_clock_in">Clock In Time</string>
+    <string name="text_clock_out">Clock Out Time</string>
+
+    <string name="text_dialog_sign_in">Validating credentials. Please wait.</string>
+    <string name="text_dialog_create_account">Creating account. Please wait.</string>
+    <string name="text_dialog_save_timeheet">Saving time. Please wait.</string>
+    <string name="text_dialog_save_timesheet_success">Timesheet successfully save.</string>
+    <string name="text_dialog_save_timesheet_failed">Timesheet failed. Please try again.</string>
 </resources>

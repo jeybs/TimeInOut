@@ -4,15 +4,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jb.clockinout.MainActivity">
+    tools:context="com.jb.clockinout.ui.main.MainActivity">
 
-    <TextView
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/include_base_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <!-- Clock In -->
+    <LinearLayout
+        android:id="@+id/linearClockIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding8"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/toolbar"
+        app:layout_constraintRight_toRightOf="@+id/linearSeparator"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintRight_toLeftOf="@+id/linearSeparator">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_clock_in"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textClockIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text12" />
+    </LinearLayout>
+
+    <!-- Separator -->
+    <LinearLayout
+        android:id="@+id/linearSeparator"
+        android:layout_width="2dp"
+        android:layout_height="60dp"
+        android:orientation="vertical"
+        android:background="@color/black"
+        android:layout_marginTop="@dimen/margin16"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Clock Out -->
+    <LinearLayout
+        android:id="@+id/linearClockOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/linearSeparator"
+        app:layout_constraintRight_toRightOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_clock_out"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textClockOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text12" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:padding="@dimen/padding16">
+
+        <Button
+            android:id="@+id/btnClockIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:onClick="clockInClick"
+            android:text="@string/button_clock_in"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text18" />
+
+        <Button
+            android:id="@+id/btnClockOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_clock_out"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text18"
+            android:onClick="clockOutClick"
+            android:visibility="gone"/>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
